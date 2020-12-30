@@ -79,8 +79,9 @@ func assign_world_camera():
 	follow.remote_path = (Main.WorldCamera as Camera2D).get_path()
 	add_child(follow)
 
-func _exit_tree():
+func queue_free():
 	Main.Player = null
+	.queue_free()
 
 func _physics_process(delta:float):
 	is_jumping = false

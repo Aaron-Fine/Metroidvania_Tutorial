@@ -11,8 +11,9 @@ func _ready():
 	if err:
 		print(err)
 
-func _exit_tree():
+func queue_free():
 	Main.WorldCamera = null
+	.queue_free()
 
 func _process(_delta):
 	offset_h = rand_range(-shake, shake)
