@@ -1,0 +1,61 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemies/WalkingEnemy.tscn" type="PackedScene" id=3]
+[ext_resource path="res://DoorConnections/00_link_01.tres" type="Resource" id=4]
+[ext_resource path="res://DoorConnections/00_link_01_b.tres" type="Resource" id=5]
+[ext_resource path="res://Enemies/CrawlingEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Enemies/FlyingEnemy.tscn" type="PackedScene" id=7]
+[ext_resource path="res://DoorConnections/01_link_02.tres" type="Resource" id=8]
+[ext_resource path="res://World/Brick.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Player/MissilePowerup.tscn" type="PackedScene" id=10]
+[ext_resource path="res://World/SaveStation.tscn" type="PackedScene" id=11]
+
+[node name="Level_01" instance=ExtResource( 1 )]
+position = Vector2( 1, 0 )
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -720896, 0, 0, -720895, 0, 5, -720894, 0, 196609, -720893, 0, 196609, -720892, 0, 6, -720891, 0, 1, -720890, 0, 2, -655360, 0, 131072, -655359, 0, 131074, -655356, 0, 65536, -655355, 0, 65537, -655354, 0, 131077, -655353, 0, 2, -589820, 0, 131072, -589819, 0, 65542, -589818, 0, 65537, -589817, 0, 131077, -589816, 0, 1, -589815, 0, 2, -524283, 0, 131072, -524282, 0, 65542, -524281, 0, 65537, -524280, 0, 65537, -524279, 0, 131077, -524278, 0, 2, -458752, 0, 0, -458751, 0, 2, -458746, 0, 131072, -458745, 0, 131073, -458744, 0, 131073, -458743, 0, 65542, -458742, 0, 131077, -458741, 0, 2, -393216, 0, 65536, -393215, 0, 65538, -393207, 0, 131072, -393206, 0, 65542, -393205, 0, 65538, -327680, 0, 65536, -327679, 0, 65538, -327670, 0, 131072, -327669, 0, 9, -327668, 0, 2, -262144, 0, 65536, -262143, 0, 65538, -262133, 0, 65536, -262132, 0, 65538, -196608, 0, 65536, -196607, 0, 65538, -196602, 0, 4, -196601, 0, 196609, -196600, 0, 196610, -196598, 0, 196608, -196597, 0, 262150, -196596, 0, 65538, -131072, 0, 65536, -131071, 0, 65538, -131066, 0, 65539, -131061, 0, 65536, -131060, 0, 65538, -65536, 0, 65536, -65535, 0, 65538, -65530, 0, 131075, -65526, 0, 0, -65525, 0, 131078, -65524, 0, 65538, 0, 0, 65536, 1, 0, 65538, 9, 0, 196608, 10, 0, 262150, 11, 0, 65537, 12, 0, 131077, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 2, 65536, 0, 65536, 65537, 0, 65538, 65546, 0, 131072, 65547, 0, 131073, 65548, 0, 65544, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 65542, 65552, 0, 65538, 131072, 0, 131072, 131073, 0, 131074, 131080, 0, 196611, 131084, 0, 131075, 131087, 0, 131072, 131088, 0, 65543, 196624, 0, 65539, 262155, 0, 0, 262156, 0, 1, 262157, 0, 1, 262158, 0, 1, 262159, 0, 1, 262160, 0, 131080, 262161, 0, 2, 327680, 0, 0, 327681, 0, 1, 327682, 0, 1, 327683, 0, 1, 327684, 0, 1, 327685, 0, 1, 327686, 0, 2, 327691, 0, 131072, 327692, 0, 131073, 327693, 0, 131073, 327694, 0, 131073, 327695, 0, 131073, 327696, 0, 65542, 327697, 0, 65538, 393216, 0, 131072, 393217, 0, 131073, 393218, 0, 131073, 393219, 0, 65542, 393220, 0, 65537, 393221, 0, 65537, 393222, 0, 65538, 393232, 0, 131072, 393233, 0, 131074, 458755, 0, 65536, 458756, 0, 65537, 458757, 0, 65537, 458758, 0, 65538, 524291, 0, 131072, 524292, 0, 65542, 524293, 0, 65537, 524294, 0, 131077, 524295, 0, 2, 589828, 0, 131072, 589829, 0, 131073, 589830, 0, 65542, 589831, 0, 131077, 589832, 0, 1, 589833, 0, 1, 589834, 0, 1, 589835, 0, 1, 589836, 0, 1, 589837, 0, 1, 589838, 0, 1, 589839, 0, 1, 589840, 0, 1, 589841, 0, 2, 655366, 0, 131072, 655367, 0, 131073, 655368, 0, 131073, 655369, 0, 131073, 655370, 0, 131073, 655371, 0, 131073, 655372, 0, 131073, 655373, 0, 131073, 655374, 0, 131073, 655375, 0, 131073, 655376, 0, 131073, 655377, 0, 131074 )
+
+[node name="Door" parent="." index="1" instance=ExtResource( 2 )]
+position = Vector2( 8, 64 )
+scale = Vector2( -1, 1 )
+connection = ExtResource( 4 )
+new_level_path = "res://Levels/Level_00.tscn"
+
+[node name="Door2" parent="." index="2" instance=ExtResource( 2 )]
+position = Vector2( 280, 128 )
+connection = ExtResource( 8 )
+new_level_path = "res://Levels/Level_02.tscn"
+
+[node name="Door3" parent="." index="3" instance=ExtResource( 2 )]
+position = Vector2( 8, -128 )
+scale = Vector2( -1, 1 )
+connection = ExtResource( 5 )
+new_level_path = "res://Levels/Level_00.tscn"
+
+[node name="WalkingEnemy" parent="." index="4" instance=ExtResource( 3 )]
+position = Vector2( 224, 64 )
+
+[node name="CrawlingEnemy" parent="." index="5" instance=ExtResource( 6 )]
+position = Vector2( 112, -48 )
+WALKING_DIRECTION = -1
+
+[node name="FlyingEnemy" parent="." index="6" instance=ExtResource( 7 )]
+position = Vector2( 128, -80 )
+
+[node name="Brick" parent="." index="7" instance=ExtResource( 9 )]
+position = Vector2( 176, 96 )
+
+[node name="Brick2" parent="." index="8" instance=ExtResource( 9 )]
+position = Vector2( 176, 128 )
+
+[node name="MissilePowerup" parent="Brick2" index="2" instance=ExtResource( 10 )]
+position = Vector2( -32, -144 )
+
+[node name="Brick3" parent="." index="9" instance=ExtResource( 9 )]
+position = Vector2( 176, 112 )
+
+[node name="SaveStation" parent="." index="10" instance=ExtResource( 11 )]
+position = Vector2( 143, 144 )

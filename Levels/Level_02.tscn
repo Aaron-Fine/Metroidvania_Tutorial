@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Levels/Level.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/BossEnemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Door.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/FlyingEnemy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/WalkingEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://DoorConnections/01_link_02.tres" type="Resource" id=6]
+[ext_resource path="res://World/Trigger.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Levels/Level_02.gd" type="Script" id=8]
+[ext_resource path="res://World/TileMap.tscn" type="PackedScene" id=9]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9, 21 )
+
+[node name="Level_02" instance=ExtResource( 1 )]
+script = ExtResource( 8 )
+
+[node name="TileMap" parent="." index="0"]
+tile_data = PoolIntArray( -458727, 0, 0, -458726, 0, 2, -393207, 0, 4, -393206, 0, 196609, -393205, 0, 196609, -393204, 0, 196609, -393203, 0, 196609, -393202, 0, 7, -393194, 0, 0, -393193, 0, 5, -393192, 0, 196609, -393191, 0, 196614, -393190, 0, 9, -393189, 0, 1, -393188, 0, 1, -393187, 0, 2, -327673, 0, 4, -327672, 0, 196609, -327671, 0, 196615, -327666, 0, 196612, -327665, 0, 6, -327664, 0, 2, -327659, 0, 4, -327658, 0, 196614, -327657, 0, 131074, -327654, 0, 131072, -327653, 0, 65542, -327652, 0, 65541, -327651, 0, 196613, -327650, 0, 7, -262138, 0, 4, -262137, 0, 196615, -262129, 0, 131072, -262128, 0, 65543, -262125, 0, 4, -262124, 0, 196609, -262123, 0, 196615, -262117, 0, 65536, -262116, 0, 65538, -262114, 0, 196612, -262113, 0, 7, -196606, 0, 196608, -196605, 0, 6, -196604, 0, 5, -196603, 0, 196609, -196602, 0, 196615, -196592, 0, 131076, -196591, 0, 1, -196590, 0, 1, -196589, 0, 131079, -196581, 0, 65536, -196580, 0, 65538, -196577, 0, 196612, -196576, 0, 196609, -196575, 0, 7, -131069, 0, 65540, -131068, 0, 131074, -131057, 0, 4, -131056, 0, 196614, -131055, 0, 131073, -131054, 0, 131073, -131053, 0, 196613, -131052, 0, 196609, -131051, 0, 196609, -131050, 0, 196609, -131049, 0, 196609, -131048, 0, 196609, -131047, 0, 196609, -131046, 0, 196609, -131045, 0, 196614, -131044, 0, 131074, -131039, 0, 196612, -131038, 0, 196609, -131037, 0, 7, -1, 0, 4, -65536, 0, 196609, -65535, 0, 196609, -65534, 0, 196609, -65533, 0, 196615, -65523, 0, 196608, -65522, 0, 196609, -65521, 0, 196615, -65501, 0, 196612, -65500, 0, 7, 65535, 0, 65539, 36, 0, 65539, 131071, 0, 65539, 65572, 0, 65539, 196606, 0, 0, 196607, 0, 131079, 131108, 0, 196612, 131109, 0, 6, 131110, 0, 2, 262142, 0, 131072, 262143, 0, 65543, 196645, 0, 131072, 196646, 0, 131074, 327679, 0, 65539, 393215, 0, 65539, 458750, 0, 196608, 458751, 0, 196616, 393216, 0, 196609, 393217, 0, 196609, 393218, 0, 7, 393252, 0, 0, 393253, 0, 1, 393254, 0, 2, 458754, 0, 131075, 458788, 0, 65540, 458789, 0, 131073, 458790, 0, 131074, 524323, 0, 0, 524324, 0, 131079, 655358, 0, 0, 655359, 0, 2, 589859, 0, 65540, 589860, 0, 131074, 720894, 0, 131072, 720895, 0, 65543, 655393, 0, 0, 655394, 0, 5, 655395, 0, 196615, 786431, 0, 196612, 720896, 0, 196609, 720897, 0, 196609, 720898, 0, 6, 720899, 0, 1, 720900, 0, 1, 720901, 0, 1, 720902, 0, 5, 720903, 0, 196609, 720904, 0, 6, 720905, 0, 5, 720906, 0, 196609, 720907, 0, 8, 720908, 0, 196609, 720909, 0, 196609, 720910, 0, 196609, 720911, 0, 196609, 720912, 0, 196609, 720913, 0, 196609, 720914, 0, 6, 720915, 0, 5, 720916, 0, 196609, 720917, 0, 196609, 720918, 0, 8, 720919, 0, 196609, 720920, 0, 6, 720921, 0, 5, 720922, 0, 196609, 720923, 0, 6, 720924, 0, 5, 720925, 0, 196609, 720926, 0, 196609, 720927, 0, 196609, 720928, 0, 196609, 720929, 0, 196614, 720930, 0, 131074, 786434, 0, 131072, 786435, 0, 131073, 786436, 0, 131073, 786437, 0, 131073, 786438, 0, 65543, 786440, 0, 131072, 786441, 0, 65543, 786443, 0, 131075, 786450, 0, 65540, 786451, 0, 131074, 786454, 0, 131075, 786456, 0, 131072, 786457, 0, 65543, 786459, 0, 131072, 786460, 0, 131074, 851974, 0, 131075, 851977, 0, 131075, 851986, 0, 65539, 851993, 0, 65539, 917522, 0, 131075, 917528, 0, 196608, 917529, 0, 196615 )
+
+[node name="BossEnemy" parent="." index="1" instance=ExtResource( 2 )]
+position = Vector2( 528, 96 )
+
+[node name="Door" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( 616, 80 )
+
+[node name="Door2" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( -24, 128 )
+scale = Vector2( -1, 1 )
+connection = ExtResource( 6 )
+new_level_path = "res://Levels/Level_01.tscn"
+
+[node name="FlyingEnemy" parent="." index="4" instance=ExtResource( 4 )]
+position = Vector2( 208, -64 )
+
+[node name="FlyingEnemy2" parent="." index="5" instance=ExtResource( 4 )]
+position = Vector2( 480, -32 )
+
+[node name="FlyingEnemy3" parent="." index="6" instance=ExtResource( 4 )]
+position = Vector2( 16, 16 )
+
+[node name="WalkingEnemy" parent="." index="7" instance=ExtResource( 5 )]
+position = Vector2( 416, -32 )
+
+[node name="Trigger" parent="." index="8" instance=ExtResource( 7 )]
+position = Vector2( 37, 152 )
+
+[node name="CollisionShape2D" parent="Trigger" index="0"]
+shape = SubResource( 1 )
+
+[node name="BlockedDoor" parent="." index="9" instance=ExtResource( 9 )]
+collision_layer = 0
+tile_data = PoolIntArray( 262182, 0, 3, 327718, 0, 131075, 524286, 0, 3, 589822, 0, 131075 )
+[connection signal="died" from="BossEnemy" to="." method="_on_BossEnemy_died"]
+[connection signal="area_triggered" from="Trigger" to="." method="_on_Trigger_area_triggered"]
+
+[editable path="Trigger"]

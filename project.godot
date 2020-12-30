@@ -8,15 +8,116 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "CommonResources",
+"language": "GDScript",
+"path": "res://ResourceLoader.gd"
+}, {
+"base": "Area2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://World/Door.gd"
+}, {
+"base": "Node",
+"class": "EnemyStats",
+"language": "GDScript",
+"path": "res://Enemies/EnemyStats.gd"
+}, {
+"base": "Area2D",
+"class": "Hitbox",
+"language": "GDScript",
+"path": "res://CollisionBoxes/Hitbox.gd"
+}, {
+"base": "Area2D",
+"class": "Hurtbox",
+"language": "GDScript",
+"path": "res://CollisionBoxes/Hurtbox.gd"
+}, {
+"base": "Resource",
+"class": "MainInstances",
+"language": "GDScript",
+"path": "res://MainInstances.gd"
+}, {
+"base": "Node",
+"class": "MainWorld",
+"language": "GDScript",
+"path": "res://World/World.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://Player/Player.gd"
+}, {
+"base": "Node2D",
+"class": "PlayerGun",
+"language": "GDScript",
+"path": "res://Player/PlayerGun.gd"
+}, {
+"base": "Node2D",
+"class": "PlayerMissile",
+"language": "GDScript",
+"path": "res://Player/PlayerMissile.gd"
+}, {
+"base": "Resource",
+"class": "PlayerStats",
+"language": "GDScript",
+"path": "res://Player/PlayerStats.gd"
+}, {
+"base": "Area2D",
+"class": "Powerup",
+"language": "GDScript",
+"path": "res://Player/Powerup.gd"
+}, {
+"base": "Node2D",
+"class": "Projectile",
+"language": "GDScript",
+"path": "res://Player/Projectile.gd"
+}, {
+"base": "Node2D",
+"class": "WorldLevel",
+"language": "GDScript",
+"path": "res://Levels/Level.gd"
+} ]
 _global_script_class_icons={
-
+"CommonResources": "",
+"Door": "",
+"EnemyStats": "",
+"Hitbox": "",
+"Hurtbox": "",
+"MainInstances": "",
+"MainWorld": "",
+"Player": "",
+"PlayerGun": "",
+"PlayerMissile": "",
+"PlayerStats": "",
+"Powerup": "",
+"Projectile": "",
+"WorldLevel": ""
 }
 
 [application]
 
 config/name="Metroidvania"
-config/icon="res://icon.png"
+run/main_scene="res://Menus/StartMenu.tscn"
+config/icon="res://Player Icon.png"
+config/windows_native_icon="res://player icon.ico"
+
+[autoload]
+
+Utils="*res://utils.gd"
+ResourceLoader="*res://ResourceLoader.gd"
+Events="*res://Events.gd"
+SaverAndLoader="*res://SaverAndLoader.gd"
+
+[display]
+
+window/size/width=320
+window/size/height=180
+window/size/test_width=1024
+window/size/test_height=720
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [importer_defaults]
 
@@ -41,6 +142,79 @@ texture={
 "svg/scale": 1.0
 }
 
+[input]
+
+ui_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777231,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":14,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777233,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":15,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777232,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":12,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":87,"unicode":0,"echo":false,"script":null)
+ ]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":13,"pressure":0.0,"pressed":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fire={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+pause={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777217,"unicode":0,"echo":false,"script":null)
+ ]
+}
+fire_missile={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+save={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":80,"unicode":0,"echo":false,"script":null)
+ ]
+}
+load={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":76,"unicode":0,"echo":false,"script":null)
+ ]
+}
+Interact={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777234,"unicode":0,"echo":false,"script":null)
+, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":83,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="World"
+2d_physics/layer_3="Player Hurtbox"
+2d_physics/layer_4="Enemy Hurtbox"
+2d_physics/layer_5="Brick"
+2d_physics/layer_6="Powerup"
+
 [rendering]
 
+quality/2d/use_nvidia_rect_flicker_workaround=true
+quality/2d/use_pixel_snap=true
 environment/default_environment="res://default_env.tres"
