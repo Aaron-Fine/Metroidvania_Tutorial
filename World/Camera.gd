@@ -1,15 +1,14 @@
 extends Camera2D
 
 var shake = 0
-var Main := ResourceLoader.MainInstances as MainInstances
+var Main := CommonResources.MainInstances as MainInstances
 
 onready var timer = $Timer
 
 func _ready():
 	Main.WorldCamera = self
 	var err = Events.connect("add_screenshake", self, "_on_Events_add_screenshake")
-	if err:
-		print(err)
+	assert(not err)
 
 func queue_free():
 	Main.WorldCamera = null

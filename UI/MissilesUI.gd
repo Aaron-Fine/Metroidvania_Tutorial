@@ -1,21 +1,24 @@
 extends HBoxContainer
 
-var PlayerStats = ResourceLoader.PlayerStats
+var Stats := CommonResources.PlayerStats as PlayerStats
 
 onready var label = $Label
 
 func _ready():
-	PlayerStats.connect(
+	var err := Stats.connect(
 		"player_missiles_changed", 
 		self,
 		"_on_player_missiles_changed")
-	_on_player_missiles_changed(PlayerStats.num_missiles)
+	_on_player_missiles_changed(Stats.num_missiles)
+	assert(not err)
 	
-	PlayerStats.connect(
+	err = Stats.connect(
 		"player_missiles_unlocked", 
 		self, 
 		"_on_player_missiles_unlocked")
-	_on_player_missiles_unlocked(PlayerStats.are_missiles_unlocked)
+	assert(not err)
+	
+	_on_player_missiles_unlocked(Stats.are_missiles_unlocked)
 
 func _on_player_missiles_changed(amount:int):
 	label.text = str(amount)

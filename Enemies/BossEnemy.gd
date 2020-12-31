@@ -1,6 +1,6 @@
 extends "res://Enemies/Enemy.gd"
 
-var MainInstance := ResourceLoader.MainInstances as MainInstances
+var Main := CommonResources.MainInstances as MainInstances
 
 const Bullet := preload("res://Enemies/EnemyBullet.tscn")
 
@@ -12,7 +12,7 @@ onready var rightWallCheck := $RightWallCheck as RayCast2D
 onready var leftWallCheck := $LeftWallCheck as RayCast2D
 
 func _physics_process(delta:float):
-	var player:Player = MainInstance.Player
+	var player:Player = Main.Player
 	if player == null:
 		return
 	var direction_to_move := sign(player.global_position.x - global_position.x)

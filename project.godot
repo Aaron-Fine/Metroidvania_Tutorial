@@ -9,11 +9,6 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
-"class": "CommonResources",
-"language": "GDScript",
-"path": "res://ResourceLoader.gd"
-}, {
 "base": "Area2D",
 "class": "Door",
 "language": "GDScript",
@@ -80,7 +75,6 @@ _global_script_classes=[ {
 "path": "res://Levels/Level.gd"
 } ]
 _global_script_class_icons={
-"CommonResources": "",
 "Door": "",
 "EnemyStats": "",
 "Hitbox": "",
@@ -106,7 +100,7 @@ config/windows_native_icon="res://player icon.ico"
 [autoload]
 
 Utils="*res://utils.gd"
-ResourceLoader="*res://ResourceLoader.gd"
+CommonResources="*res://CommonResources.gd"
 Events="*res://Events.gd"
 SaverAndLoader="*res://SaverAndLoader.gd"
 

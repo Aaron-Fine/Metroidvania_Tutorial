@@ -1,6 +1,6 @@
 extends "res://Enemies/Enemy.gd"
 
-var MainInstances = ResourceLoader.MainInstances
+var Main := CommonResources.MainInstances as MainInstances
 
 func _ready():
 	# We don't want to chase the player unless we can see them, so start by
@@ -8,7 +8,7 @@ func _ready():
 	set_physics_process(false)
 
 func _physics_process(delta:float):
-	var player := (MainInstances as MainInstances).Player as Player
+	var player:Player = Main.Player
 	if player == null:
 		return
 	

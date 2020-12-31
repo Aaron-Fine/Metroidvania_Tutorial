@@ -7,8 +7,8 @@ const PlayerBullet = preload("res://Player/PlayerBullet.tscn")
 const PlayerMissile = preload("res://Player/PlayerMissile.tscn")
 const JumpEffect = preload("res://Effects/JumpEffect.tscn")
 
-var Stats := ResourceLoader.PlayerStats as PlayerStats
-var Main := ResourceLoader.MainInstances as MainInstances
+var Stats := CommonResources.PlayerStats as PlayerStats
+var Main := CommonResources.MainInstances as MainInstances
 
 export var ACCELERATION := 512
 export var MAX_SPEED := 64
@@ -67,8 +67,7 @@ func _ready():
 	assert(Main, "Main Instances object must be accesable by the Player")
 	
 	var err = Stats.connect("player_died", self, "_on_died")
-	if err:
-		print(err)
+	assert(not err)
 
 	Main.Player = self
 	call_deferred("assign_world_camera")
@@ -117,10 +116,6 @@ func _physics_process(delta:float):
 		fire_bullet()
 	if Input.is_action_pressed("fire_missile") and fireCooldown.time_left <= 0:
 		fire_missile()
-	if Input.is_action_just_pressed("save"):
-		SaverAndLoader.save_game()
-	if Input.is_action_just_pressed("load"):
-		SaverAndLoader.load_game()
 
 func projectile_setup(scene:PackedScene, speed:int) -> Projectile:
 	if not scene or not speed:

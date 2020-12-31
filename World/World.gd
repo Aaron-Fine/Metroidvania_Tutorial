@@ -1,7 +1,7 @@
 extends Node
 class_name MainWorld
 
-var Main := ResourceLoader.MainInstances as MainInstances
+var Main := CommonResources.MainInstances as MainInstances
 
 onready var currentLevel:Node2D = $Level_00
 
@@ -13,8 +13,7 @@ func _ready():
 		SaverAndLoader.is_loading = false
 	
 	var err = Main.Player.connect("hit_door", self, "_on_Player_hit_door")
-	if err:
-		print(err)
+	assert(not err)
 
 func _on_Player_hit_door(door:Door):
 	if not door:
