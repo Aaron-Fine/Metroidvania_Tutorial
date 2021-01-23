@@ -8,6 +8,10 @@ const POS_Y := "position_y"
 const PARENT := "parent"
 
 var is_loading := false
+var custom_data = {
+	missiles_unlocked = false,
+	boss_defeated = false
+}
 
 func save_game():
 	var file := File.new()
@@ -17,10 +21,13 @@ func save_game():
 		print("Game not saved! Could not open file for writing!")
 		return
 	
+	file.store_line(to_json(custom_data))
+	
 	var persistNodes := get_tree().get_nodes_in_group("Persists")
 	for node in persistNodes:
 		var nodeData:Dictionary = node.save()
-		file.store_line(to_json(nodeData))
+		if nodeData:
+			file.store_line(to_json(nodeData))
 	file.close()
 
 func load_game():
@@ -41,13 +48,16 @@ func load_game():
 	for node in persistNodes:
 		node.queue_free()
 	
+	if not file.eof_reached():
+		custom_data = parse_json(file.get_line())
+	
 	while not file.eof_reached():
 		var lineFromFile := file.get_line()
 		if lineFromFile.empty():
 			continue
 			
 		var currentLine = parse_json(lineFromFile)
-		if currentLine == null:
+		if not currentLine:
 			print("Problem loading. Could not parse the following line:")
 			print(lineFromFile)
 			continue
@@ -72,6 +82,7 @@ func load_game():
 		
 		# TODO: Implement this such that we don't need the check
 		for property in currentLine.keys():
+			assert(typeof(property) == TYPE_STRING)
 			if (property == F_NAME
 			or property == POS_X
 			or property == POS_Y

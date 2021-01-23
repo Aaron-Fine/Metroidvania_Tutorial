@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/MissileLaunch.wav-7ec525da490e84a6f3f9595084e0ada5.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/MissileLaunch.wav"
+dest_files=[ "res://.import/MissileLaunch.wav-7ec525da490e84a6f3f9595084e0ada5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

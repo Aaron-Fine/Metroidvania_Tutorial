@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://Effects/Effect.gd"
 
 var motion = Vector2(rand_range(-20, 20), rand_range(-10, -40))
 

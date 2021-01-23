@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Enemies/BossEnemyBody.png" type="Texture" id=1]
 [ext_resource path="res://Enemies/BossEnemy.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Enemies/BossEnemyLeg1.png" type="Texture" id=6]
 [ext_resource path="res://Enemies/BossEnemyLeg3.png" type="Texture" id=7]
 [ext_resource path="res://Enemies/BossEnemyLeg2.png" type="Texture" id=8]
+[ext_resource path="res://Music and Sounds/BossSound.wav" type="AudioStream" id=9]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 12.0
@@ -888,6 +889,9 @@ collision_mask = 2
 [node name="FireTimer" type="Timer" parent="." index="8"]
 wait_time = 0.5
 autostart = true
+
+[node name="BossAudio" type="AudioStreamPlayer2D" parent="." index="9"]
+stream = ExtResource( 9 )
 [connection signal="timeout" from="FireTimer" to="." method="_on_FireTimer_timeout"]
 
 [editable path="Hurtbox"]

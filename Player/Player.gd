@@ -69,6 +69,7 @@ func _ready():
 	var err = Stats.connect("player_died", self, "_on_died")
 	assert(not err)
 
+	Stats.are_missiles_unlocked = SaverAndLoader.custom_data.missiles_unlocked
 	Main.Player = self
 	call_deferred("assign_world_camera")
 

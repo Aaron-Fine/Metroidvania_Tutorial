@@ -11,6 +11,15 @@ export var SPREAD_DEGREES:float = 30
 onready var rightWallCheck := $RightWallCheck as RayCast2D
 onready var leftWallCheck := $LeftWallCheck as RayCast2D
 
+func _ready():
+	._ready()
+	if SaverAndLoader.custom_data.boss_defeated:
+		queue_free()
+
+func _process(_delta):
+	if !$BossAudio.playing:
+		$BossAudio.play()
+
 func _physics_process(delta:float):
 	var player:Player = Main.Player
 	if player == null:
@@ -39,3 +48,7 @@ func fire_bullet():
 
 func _on_FireTimer_timeout():
 	fire_bullet()
+
+func _on_EnemyStats_enemy_died():
+	SaverAndLoader.custom_data.boss_defeated = true
+	._on_EnemyStats_enemy_died()

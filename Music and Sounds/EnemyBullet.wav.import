@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/EnemyBullet.wav-543dba0f57f0ef9101995fca82d3412a.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/EnemyBullet.wav"
+dest_files=[ "res://.import/EnemyBullet.wav-543dba0f57f0ef9101995fca82d3412a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

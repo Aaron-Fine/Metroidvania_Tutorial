@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Player/Powerup.gd" type="Script" id=1]
 [ext_resource path="res://Effects/Dust.png" type="Texture" id=2]
+[ext_resource path="res://Music and Sounds/Powerup.wav" type="AudioStream" id=3]
+[ext_resource path="res://Music and Sounds/PowerupEnvironmental.wav" type="AudioStream" id=4]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 1
@@ -37,3 +39,11 @@ scale = Vector2( 0.3, 0.3 )
 amount = 5
 process_material = SubResource( 2 )
 texture = ExtResource( 2 )
+
+[node name="EnvionrmentalAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -5.0
+pitch_scale = 0.5

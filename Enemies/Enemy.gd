@@ -35,4 +35,3 @@ func chase_player(player:Player, delta:float):
 	
 	# Always face the player
 	sprite.flip_h = global_position < player.global_position
-

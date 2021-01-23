@@ -3,6 +3,12 @@ class_name Powerup
 
 var PlayerStats := CommonResources.PlayerStats as PlayerStats
 
+onready var Envionrmental:AudioStreamPlayer2D = $EnvionrmentalAudio
+onready var PickupSound:AudioStreamPlayer2D = $PickupSound
+
 func _pickup():
-	# Virtual function. Override this in derived script to implement powerup
-	pass
+	PickupSound.play()
+
+func _process(delta):
+	if !Envionrmental.playing:
+		Envionrmental.play()

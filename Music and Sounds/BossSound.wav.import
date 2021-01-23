@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BossSound.wav-05a609167bdb77b90d74c9e9a522e6cb.sample"
+
+[deps]
+
+source_file="res://Music and Sounds/BossSound.wav"
+dest_files=[ "res://.import/BossSound.wav-05a609167bdb77b90d74c9e9a522e6cb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
