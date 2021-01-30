@@ -49,6 +49,7 @@ onready var powerupDetector := $PowerupDetector as Area2D
 
 # warning-ignore:unused_signal
 signal hit_door(door)
+signal player_died
 
 func save():
 	var saveData = {
@@ -70,6 +71,10 @@ func _ready():
 	assert(not err)
 
 	Stats.are_missiles_unlocked = SaverAndLoader.custom_data.missiles_unlocked
+	if Stats.are_missiles_unlocked:
+		Stats.num_missiles = Stats.max_missiles
+	Stats.health = Stats.max_health
+	
 	Main.Player = self
 	call_deferred("assign_world_camera")
 
@@ -296,4 +301,5 @@ func _on_PowerupDetector_area_entered(area:Powerup):
 	area._pickup()
 
 func _on_died():
+	emit_signal("player_died")
 	queue_free()

@@ -14,6 +14,9 @@ func _ready():
 	
 	var err = Main.Player.connect("hit_door", self, "_on_Player_hit_door")
 	assert(not err)
+	err = Main.Player.connect("player_died", self, "_on_Player_player_died")
+	assert(not err)
+	Music.play_music()
 
 func _on_Player_hit_door(door:Door):
 	if not door:
@@ -45,3 +48,9 @@ func get_door_with_connection(sourceDoor:Door, sourceConnection:Resource):
 		if door.connection == sourceConnection and door != sourceDoor:
 			return door
 	return null
+
+
+func _on_Player_player_died():
+	yield(get_tree().create_timer(1.0), "timeout")
+	var err := get_tree().change_scene("res://Menus/GameOverMenu.tscn")
+	assert(!err)

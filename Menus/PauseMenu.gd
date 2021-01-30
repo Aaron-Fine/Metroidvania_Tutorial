@@ -13,6 +13,9 @@ func set_paused(value):
 
 func _process(_delta):
 	if Input.is_action_just_pressed("pause"):
+		if get_tree().get_nodes_in_group("Player").size() == 0:
+			#Player isn't alive, so no need to pause
+			return
 		set_paused(!is_paused)
 
 func _on_ResumeButton_pressed():

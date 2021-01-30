@@ -103,6 +103,7 @@ Utils="*res://utils.gd"
 CommonResources="*res://CommonResources.gd"
 Events="*res://Events.gd"
 SaverAndLoader="*res://SaverAndLoader.gd"
+Music="*res://Music and Sounds/Music.tscn"
 
 [display]
 

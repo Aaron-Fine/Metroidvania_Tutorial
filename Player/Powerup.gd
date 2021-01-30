@@ -9,6 +9,6 @@ onready var PickupSound:AudioStreamPlayer2D = $PickupSound
 func _pickup():
 	PickupSound.play()
 
-func _process(delta):
+func _process(_delta:float):
 	if !Envionrmental.playing:
 		Envionrmental.play()
